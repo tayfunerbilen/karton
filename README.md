@@ -1,2 +1,2 @@
 # karton
-carbon.now.sh clone for tutorial
+carbon.now.sh sitesini örnek alarak derste hazırladığımız projenin kaynak kodları.
