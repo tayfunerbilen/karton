@@ -57,7 +57,7 @@ fontSwitchBtn.addEventListener('change', (e) => {
 
 // font boyutunu ayarlar
 fontSizeSwitchBtn.addEventListener('change', (e) => {
-    document.querySelector('.CodeMirror').style.fontSize = e.target.value;
+    document.querySelector('.CodeMirror *').style.fontSize = e.target.value;
 });
 
 const exportImage = (size) => {
