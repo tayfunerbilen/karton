@@ -25,7 +25,7 @@ editor.setOption('lineNumbers', lineNumbers);
 // satır numarasını gizleyip/gösterir
 lineNumbersBtn.addEventListener('click', (e) => {
     lineNumbers = !lineNumbers;
-    e.target.classList.toggle('active');
+    e.target.classList.toggle('active'); // sonradan eklendi
     editor.setOption('lineNumbers', lineNumbers);
 });
 
@@ -43,7 +43,7 @@ themeSwitchBtn.addEventListener('change', (e) => {
     link.setAttribute('id', 'theme-css');
     link.setAttribute('rel', 'stylesheet');
     document.querySelector('head').appendChild(link);
-    editor.setOption('theme', e.target.value);a
+    editor.setOption('theme', e.target.value);
 });
 
 modeSwitchBtn.addEventListener('change', (e) => {
