@@ -65,6 +65,7 @@ const exportImage = (size) => {
     loader.style.display = 'flex';
     if (watermark)
         logo.style.display = 'flex';
+    window.scrollTo(0, 0); // sonradan eklendi
     html2canvas(preview).then(canvas => {
         loader.style.display = '';
         if (watermark)
