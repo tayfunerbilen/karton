@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>karton - kodlarınız resme çevirip paylaşın!</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="codemirror/theme/base16-dark.css" id="theme-css">
+</head>
+<body>
+
+<h3>karton</h3>
+
+<p>
+	Kodunuzu resme çevirin ve bu güzelliği herkesle paylaşın <br>
+	Başlamak için hemen aşağıdaki alana kodunuzu yazın ya da dosyalarınızdan seçin.
+</p>
+
+<div class="editor">
+<!--	<input type="text" id="set-title">-->
+	<div class="editor-toolbar">
+		<button id="open-file-btn">Dosya Aç</button>
+		<button id="line-numbers-btn">Satır No</button>
+		<label class="select">
+			<span>Tema</span>
+			<select id="theme-switch-btn">
+				<option value="3024-night">3024-night</option>
+				<option value="ayu-dark">ayu-dark</option>
+				<option value="base16-dark" selected>base16-dark</option>
+				<option value="duotone-dark">duotone-dark</option>
+			</select>
+		</label>
+		<label class="select">
+			<span>Mod</span>
+			<select id="mode-switch-btn">
+				<option value="php">PHP</option>
+				<option value="css">CSS</option>
+				<option value="sass">SASS</option>
+				<option value="javascript" selected>JavaScript</option>
+				<option value="html">HTML</option>
+			</select>
+		</label>
+		<label class="select">
+			<span>Font</span>
+			<select id="font-switch-btn">
+				<option value="monospace">monospace</option>
+				<option value="monaco" selected>monaco</option>
+				<option value="Ubuntu Mono">Ubuntu Mono</option>
+			</select>
+		</label>
+		<label class="select">
+			<span>Font Boyutu</span>
+			<select id="font-size-switch-btn">
+				<option value="14px">14px</option>
+				<option value="16px" selected>16px</option>
+				<option value="18px">18px</option>
+				<option value="20px">20px</option>
+			</select>
+		</label>
+		<input type="color" id="set-color-btn" value="#a8b4bf">
+		<label class="select export-select">
+			<span>Çıkart</span>
+			<span class="export-options">
+				<span onclick="exportImage(1)">1x</span>
+				<span onclick="exportImage(2)">2x</span>
+				<span onclick="exportImage(3)">4x</span>
+			</span>
+		</label>
+	</div>
+	<div class="preview-wrapper">
+		<div class="loading"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+		<div class="preview" id="preview">
+			<div class="karton-logo">karton</div>
+			<div class="preview-top">
+				<span></span>
+				<div class="title" id="title"></div>
+				<div></div>
+			</div>
+			<textarea name="" id="textarea" cols="30" rows="10">const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key], obj)
+
+const compose = (...fns) => res => fns.reduce((accum, next) => next(accum), res)
+
+const unfold = (f, seed) => {
+  const go = (f, seed, acc) => {
+    const res = f(seed)
+    return res ? go(f, res[1], acc.concat([res[0]])) : acc
+  }
+  return go(f, seed, [])
+}</textarea>
+		</div>
+	</div>
+</div>
+
+<script src="codemirror/lib/codemirror.js"></script>
+<script src="codemirror/addon/edit/matchbrackets.js"></script>
+<script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="codemirror/mode/xml/xml.js"></script>
+<script src="codemirror/mode/javascript/javascript.js"></script>
+<script src="codemirror/mode/css/css.js"></script>
+<script src="codemirror/mode/sass/sass.js"></script>
+<script src="codemirror/mode/clike/clike.js"></script>
+<script src="codemirror/mode/php/php.js"></script>
+<script src="html2canvas.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
