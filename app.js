@@ -57,7 +57,7 @@ fontSwitchBtn.addEventListener('change', (e) => {
 
 // font boyutunu ayarlar
 fontSizeSwitchBtn.addEventListener('change', (e) => {
-    [...document.querySelector('.CodeMirror *')].forEach((el, key) => {
+    [...document.querySelectorAll('.CodeMirror *')].forEach((el, key) => {
         el.style.fontSize = e.target.value;
     }); // sonradan eklendi
 });
